@@ -4,8 +4,7 @@
 This project is a to do list . you can add and remove items 
 The app saves the list on the cookies .
 
-
-
+![example](example.gif)
 
 
 ### Live URL
