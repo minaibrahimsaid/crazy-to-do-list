@@ -1,38 +1,136 @@
-.App {
-  text-align: center;
+* {
+  font-family: sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.card-list {
+  display: grid;
+  grid-gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.card {
   display: flex;
   flex-direction: column;
+  margin: 5px;
+  border: 1px solid rgb(139, 139, 139);
+  border-radius: 5px;
+  padding: 10px;
+  height: 400px;
+  justify-content: space-between;
+  animation: fade-in 500ms;
+}
+
+.card-header {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+}
+.card-title {
+  color: rgb(189, 189, 189);
+  font-size: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.card-text {
+  border: 0;
+  width: 100%;
+  margin-top: 20px;
+  font-size: 18px;
+  resize:none
 }
 
-@keyframes App-logo-spin {
+.card-text:focus-visible {
+  outline: unset;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 30px auto;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.card-save {
+  width: 30%;
+  padding: 10px;
+  background-color: rgb(69 142 54);
+  border-radius: 5px;
+  border: unset;
+  color: #ffffff;
+  font-size: 16px;
+  font-family: fantasy;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.card-save-disable {
+  background-color: rgb(105, 105, 105);
+  cursor: not-allowed;
+}
+
+.icon {
+  cursor: pointer;
+}
+
+.add {
+  background-color: green;
+  color: #ffffff;
+  padding: 15px;
+  border-radius: 50%;
+}
+
+.clear {
+  background-color: rgb(145, 10, 10);
+  color: #ffffff;
+  padding: 15px;
+  border-radius: 50%;
+}
+
+.empty-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  font-size: 18px;
+}
+
+.empty-content p {
+  display: flex;
+  align-items: center;
+}
+.empty-content .icon {
+  margin-left: 10px;
+}
+@media (min-width: 600px) {
+  .card-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .card-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .card-list,
+  .controls {
+    margin: 30px;
+  }
+}
+
+@keyframes fade-in {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
   }
 }
