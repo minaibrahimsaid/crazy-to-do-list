@@ -4,7 +4,7 @@ const Add = ({ setCookie = () => {}, cards = [] }) => {
   const addCard = () => {
     const id = cards ? cards.length + 1 : 1
     const allCard = cards ?? []
-    const newCookie = JSON.stringify([...allCard, { id, text: '' , done:false }])
+    const newCookie = JSON.stringify([{ id, text: '' , done:false } ,...allCard])
     setCookie('cards', newCookie)
   }
 

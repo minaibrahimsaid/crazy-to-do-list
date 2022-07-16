@@ -30,7 +30,7 @@ const Card = ({
       )}
       <div className="card-content">
         <div className="card-header">
-          <span className="card-title">Item {card.id}</span>
+          <span className="card-title">{card.id} )</span>
           <BsTrash
             size={20}
             onClick={() => onRemoveCard(card.id)}
